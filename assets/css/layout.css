@@ -21,7 +21,7 @@ aside,
 main,
 section,
 article {
-  background-color: var(--bg-color);
+  /* background-color: var(--bg-color); */
   color: var(--text-color);
   display: flex;
   flex-direction: column;
@@ -31,6 +31,10 @@ article {
 
 main {
   height: fit-content;
+  background-image: url("../gif/hyper-space.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   font-size: 1.8rem; /* Slightly larger font size for main content */
   gap: 1rem;
 }
@@ -46,4 +50,57 @@ main > section > article {
   width: 100%;
   padding: 2rem;
   text-align: left;
+}
+
+/* Headings */
+h2,
+h3,
+h4,
+h5 {
+  color: var(--heading-color);
+}
+
+/* Paragraphs */
+p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--text-color);
+  text-align: justify;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+
+/* Links */
+a,
+a:visited,
+a:hover,
+a:active {
+  display: inline-block;
+  color: inherit; /* Get color from parent element; color will be the same for all link states */
+}
+
+/* Media */
+img,
+picture,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+div:has(> img:only-child) {
+  overflow: hidden;
+}
+
+div > img:only-child {
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+div > img:only-child:hover {
+  transform: scale(1.02);
 }

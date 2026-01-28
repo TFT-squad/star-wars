@@ -4,20 +4,20 @@
 /* GLOBAL CUSTOM CSS PROPERTIES/VARIABLES */
 :root {
   /* THEME COLORS */
-   /* Backgrounds */
-  --bg-space: #0b0d17;        /* Deep space black */
-  --bg-dark: #11131f;         /* Panels / sections */
-  --bg-card: #1a1d2e;         /* Cards / containers */
+  /* Backgrounds */
+  --bg-space: #0b0d17; /* Deep space black */
+  --bg-dark: #11131f; /* Panels / sections */
+  --bg-card: #1a1d2e; /* Cards / containers */
 
   /* Primary Colors */
-  --gold-jedi: #f5c542;       /* Jedi / iconic Star Wars gold */
-  --blue-force: #4da6ff;      /* Light saber blue */
-  --red-sith: #e63946;        /* Sith red */
+  --gold-jedi: #f5c542; /* Jedi / iconic Star Wars gold */
+  --blue-force: #4da6ff; /* Light saber blue */
+  --red-sith: #e63946; /* Sith red */
 
   /* Text Colors */
-  --text-main: #ffffff;       /* Main text */
-  --text-muted: #b0b3c6;      /* Secondary text */
-  --text-accent: #f5c542;     /* Highlight text */
+  --text-main: #ffffff; /* Main text */
+  --text-muted: #b0b3c6; /* Secondary text */
+  --text-accent: #f5c542; /* Highlight text */
 
   /* UI / Effects */
   --border-glow: rgba(245, 197, 66, 0.6);
