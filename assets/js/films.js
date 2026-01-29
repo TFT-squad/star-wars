@@ -26,7 +26,7 @@ fetch("https://swapi.info/api/films")
         // HEADLINE + IMAGE SECTION
 
         const headline = document.createElement("h3");
-        headline.innerHTML = `<h3>${item.title}</h3>`;
+        headline.innerText = `${item.title}`;
 
         const figimage = document.createElement("img");
         figimage.src = arrMovieImages[0].image;
