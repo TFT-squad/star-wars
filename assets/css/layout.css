@@ -29,9 +29,15 @@ article {
 }
 
 main {
+  position: relative;
+  min-height: 100vh;
   height: fit-content;
   font-size: 1.8rem; /* Slightly larger font size for main content */
   gap: 1rem;
+}
+
+main > *:not(canvas) {
+  position: relative;
 }
 
 /* Sections inside main */
