@@ -80,19 +80,22 @@ class Star {
     const angle = randomInRange(0, 360) * (Math.PI / 180);
     const vX = Math.cos(angle);
     const vY = Math.sin(angle);
+    const mainEl = document.querySelector("main"); // ONLY CHANGE HERE
+    const width = mainEl.offsetWidth;
+    const height = mainEl.offsetHeight;
     const travelled =
       Math.random() > 0.5
-        ? Math.random() * Math.max(window.innerWidth, window.innerHeight) +
-          Math.random() * (window.innerWidth * 0.24)
-        : Math.random() * (window.innerWidth * 0.25);
+        ? Math.random() * Math.max(width, height) +
+          Math.random() * (width * 0.24)
+        : Math.random() * (width * 0.25);
     this.STATE = {
       ...this.STATE,
       iX: undefined,
       iY: undefined,
       active: travelled ? true : false,
-      x: Math.floor(vX * travelled) + window.innerWidth / 2,
+      x: Math.floor(vX * travelled) + width / 2,
       vX,
-      y: Math.floor(vY * travelled) + window.innerHeight / 2,
+      y: Math.floor(vY * travelled) + height / 2,
       vY,
       size: BASE_SIZE,
     };
@@ -117,11 +120,22 @@ class JumpToHyperspace {
   };
   canvas = document.createElement("canvas");
   context = this.canvas.getContext("2d");
+  mainEl = document.querySelector("main"); // ADDED
 
   constructor() {
+    // Style canvas as background - ONLY ADDED
+    Object.assign(this.canvas.style, {
+      position: "absolute",
+      top: "0",
+      left: "0",
+      width: "100%",
+      height: "100%",
+      zIndex: "0",
+    });
+
+    this.mainEl.appendChild(this.canvas); // CHANGED: main instead of body
     this.bind();
     this.setup();
-    document.body.appendChild(this.canvas);
     this.render();
   }
 
@@ -129,19 +143,23 @@ class JumpToHyperspace {
     const {
       STATE: { bgAlpha, velocity, sizeInc, initiating, jumping, stars },
       context,
+      canvas,
     } = this;
 
+    // Use canvas dimensions instead of window
+    const w = canvas.width;
+    const h = canvas.height;
+
     // Clear the canvas
-    context.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    context.clearRect(0, 0, w, h); // CHANGED
     if (bgAlpha > 0) {
       context.fillStyle = `rgba(31, 58, 157, ${bgAlpha})`;
-      context.fillRect(0, 0, window.innerWidth, window.innerHeight);
+      context.fillRect(0, 0, w, h); // CHANGED
     }
 
     // 1. Shall we add a new star
     const nonActive = stars.filter((s) => !s.STATE.active);
     if (!initiating && nonActive.length > 0) {
-      // Introduce a star
       nonActive[0].STATE.active = true;
     }
 
@@ -152,9 +170,9 @@ class JumpToHyperspace {
       // Check if the star needs deactivating
       if (
         ((iX || x) < 0 ||
-          (iX || x) > window.innerWidth ||
+          (iX || x) > w || // CHANGED
           (iY || y) < 0 ||
-          (iY || y) > window.innerHeight) &&
+          (iY || y) > h) && // CHANGED
         active &&
         !initiating
       ) {
@@ -184,7 +202,8 @@ class JumpToHyperspace {
         };
         let color = `rgba(255, 255, 255, ${star.STATE.alpha})`;
         if (jumping) {
-          const [r, g, b] = WARP_COLORS[randomInRange(0, WARP_COLORS.length)];
+          const [r, g, b] =
+            WARP_COLORS[randomInRange(0, WARP_COLORS.length - 1)];
           color = `rgba(${r}, ${g}, ${b}, ${star.STATE.alpha})`;
         }
         context.strokeStyle = color;
@@ -262,16 +281,17 @@ class JumpToHyperspace {
   };
 
   bind = () => {
-    this.canvas.addEventListener("mousedown", this.initiate.bind(this));
-    this.canvas.addEventListener("touchstart", this.initiate.bind(this));
-    this.canvas.addEventListener("mouseup", this.enter.bind(this));
-    this.canvas.addEventListener("touchend", this.enter.bind(this));
+    // Listen on mainEl so it works through content gaps
+    this.mainEl.addEventListener("mousedown", this.initiate.bind(this));
+    this.mainEl.addEventListener("touchstart", this.initiate.bind(this));
+    this.mainEl.addEventListener("mouseup", this.enter.bind(this));
+    this.mainEl.addEventListener("touchend", this.enter.bind(this));
   };
 
   setup = () => {
     this.context.lineCap = "round";
-    this.canvas.height = window.innerHeight;
-    this.canvas.width = window.innerWidth;
+    this.canvas.height = this.mainEl.offsetHeight; // CHANGED
+    this.canvas.width = this.mainEl.offsetWidth; // CHANGED
   };
 
   reset = () => {
