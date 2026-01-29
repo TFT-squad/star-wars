@@ -6,6 +6,7 @@ import "./js-components/burger-menu.js";
 // import "./api-fetch.js";
 // import "./films.js";
 import "./species.js";
+import "./people.js";
 // import "./js-components/form.js";
 
 /* Include other .js files here */
