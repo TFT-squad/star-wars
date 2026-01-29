@@ -15,24 +15,26 @@ fetch("https://swapi.info/api/films")
     if (data) {
       console.log(movieImages);
       data.sort((a, b) => a.episode_id - b.episode_id);
-      // data.sort((a, b) => a.director.localeCompare(b.director)); // SORTERET På ALFABET EFTER DIRECTOR.
-
-      const ul = document.createElement("ul");
+      const figure = document.createElement("figure");
 
       for (item of data) {
         console.log(item);
-        const image = movieImages.filter(
+        const arrMovieImages = movieImages.filter(
           (x) => x.episode_id === item.episode_id,
         );
-        console.log(image);
-        const liWrapper = document.createElement("li");
-        const ulInner = document.createElement("ul");
-        liWrapper.innerHTML = `<h3>${item.title}</h3>`;
-        liWrapper.append(ulInner);
-        ul.append(liWrapper);
 
-        const liImage = document.createElement("li");
-        liImage.innerHTML = `<img src="${image[0].image}"></img>`;
+        // HEADLINE + IMAGE SECTION
+
+        const headline = document.createElement("h3");
+        headline.innerHTML = `<h3>${item.title}</h3>`;
+
+        const figimage = document.createElement("img");
+        figimage.src = arrMovieImages[0].image;
+
+        // FIG CAPTION SECTION
+
+        const figCap = document.createElement("figcaption");
+        const figUL = document.createElement("ul");
 
         const liRelease = document.createElement("li");
         liRelease.innerHTML = `<p><b>Release Date:</b> ${item.release_date}</p>`;
@@ -43,11 +45,11 @@ fetch("https://swapi.info/api/films")
         const liDirector = document.createElement("li");
         liDirector.innerHTML = `<p><b>Producer:</b> ${item.director}</p>`;
 
-        ulInner.append(liImage, liRelease, liEpisode, liDirector);
+        // APPENDING
+        figUL.append(liRelease, liEpisode, liDirector);
+        figCap.append(figUL);
+        figure.append(headline, figimage, figCap);
+        container.append(figure);
       }
-      container.append(ul);
     }
-  })
-  .catch((error) => {
-    console.error(error);
   });
