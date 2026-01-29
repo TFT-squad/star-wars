@@ -1,5 +1,8 @@
 /* FONT IMPORTS */
-/* @import url("LINK"); */
+@font-face {
+  font-family: "Starjedi";
+  src: url("../fonts/Starjhol.ttf") format("truetype");
+}
 
 /* GLOBAL CUSTOM CSS PROPERTIES/VARIABLES */
 :root {
@@ -36,5 +39,5 @@
   --text-color: var(--white);
 
   --font-family:
-    "Arial", "Helvetica", "sans-serif"; /* Add imported font-family in front */
+    "Starjedi", "Arial", "Helvetica", "sans-serif"; /* Add imported font-family in front */
 }
