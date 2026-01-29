@@ -36,14 +36,15 @@ main {
   gap: 1rem;
 }
 
-main > *:not(canvas) {
-  position: relative;
-}
-
 /* Sections inside main */
 main > section {
   gap: 1rem;
   text-align: center;
+}
+
+main > *:not(canvas) {
+  position: relative;
+  z-index: 1; /* Above canvas z-index: 0 */
 }
 
 /* Articles inside sections in main */
