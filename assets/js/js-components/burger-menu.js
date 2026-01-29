@@ -1,4 +1,3 @@
-todo: "Implement burger menu functionality; add the below classes to header";
 /*
 document.addEventListener("DOMContentLoaded", () => {
   const headers = document.getElementsByClassName("main-header");

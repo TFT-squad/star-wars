@@ -21,7 +21,6 @@ aside,
 main,
 section,
 article {
-  /* background-color: var(--bg-color); */
   color: var(--text-color);
   display: flex;
   flex-direction: column;
@@ -31,10 +30,6 @@ article {
 
 main {
   height: fit-content;
-  background-image: url("../gif/hyper-space.gif");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   font-size: 1.8rem; /* Slightly larger font size for main content */
   gap: 1rem;
 }

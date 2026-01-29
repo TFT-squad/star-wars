@@ -1,0 +1,236 @@
+/* Burger container */
+#container {
+  width: 80px;
+  height: 80px;
+}
+
+#burger {
+  cursor: pointer;
+  opacity: 0;
+  animation: fadein 0.2s ease 1s forwards;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#burger div {
+  position: absolute;
+  left: 50%;
+  height: 10%;
+  width: 70%;
+  transform: translate(-50%, -50%);
+  transform-origin: 50% 50%;
+  transition:
+    top 0.4s ease 0.4s,
+    transform 0.4s ease 0.4s;
+}
+
+#burger div::before,
+#burger div::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  height: 40%;
+  background: white;
+  transform: translate(0, -45%);
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Top and bottom buns */
+.bun.top {
+  top: 25%;
+}
+.bun.bottom {
+  top: 75%;
+}
+
+.bun.top::before,
+.bun.bottom::before {
+  left: 0;
+  width: 75%;
+  border-radius: 10px 0 0 10px;
+}
+.bun.top::after,
+.bun.bottom::after {
+  right: 0;
+  width: 25%;
+}
+
+/* Filling (middle bar / lightsaber) */
+.filling {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(180deg);
+  animation: green-ls-out 0.8s ease forwards;
+}
+.filling::before {
+  left: 0;
+  width: 75%;
+  border-radius: 10px 0 0 10px;
+}
+.filling::after {
+  right: 0;
+  width: 25%;
+}
+
+/* Hover light glow effects */
+#burger:hover .bun.top::before {
+  background: #fee;
+  box-shadow: #f00 0 0 10px 1px;
+}
+#burger:hover .bun.bottom::before {
+  background: #dff;
+  box-shadow: #0ff 0 0 10px 1px;
+}
+#burger:hover .filling::before {
+  background: #efe;
+  box-shadow: #0f0 0 0 10px 1px;
+}
+
+/* Active transformations */
+#burger.active .bun {
+  top: 50%;
+  transition:
+    top 0.4s ease,
+    transform 0.4s ease;
+}
+#burger.active .bun.top {
+  transform: translate(-50%, -50%) rotate(-225deg);
+}
+#burger.active .bun.bottom {
+  transform: translate(-50%, -50%) rotate(405deg);
+}
+#burger.active .filling {
+  transform: translate(-50%, -50%) rotate(-90deg);
+  animation: green-ls-in 0.8s ease forwards;
+}
+
+/* Navigation menu */
+/* nav {
+  background: #111;
+  color: white;
+  position: absolute;
+  top: 80px;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  transform: translateX(-100%);
+  transition: transform 0.2s ease;
+  padding-right: 16px;
+} */
+
+/* nav.show {
+  transform: translateX(0);
+} */
+
+/* nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+} */
+
+/* nav li {
+  font-size: 1.75em;
+  line-height: 1.25em;
+  margin: 16px 0;
+  border-radius: 0 100px 100px 0;
+  width: 0;
+  padding-left: 0;
+  transition:
+    width 0.2s ease,
+    padding 0.2s ease,
+    color 0.2s ease,
+    text-shadow 0.2s ease,
+    box-shadow 0.2s ease;
+} */
+
+/* nav li a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding-left: 16px;
+  width: 300px;
+} */
+
+/* nav li:hover {
+  width: 100%;
+  padding: 0 16px 0 0;
+  color: black;
+} */
+
+/* Lightsaber glow color variants */
+li.green {
+  background: #1a1;
+  box-shadow: #0f0 0 0 0 2px;
+}
+
+li.green:hover {
+  box-shadow: #0f0 0 0 20px 2px;
+  text-shadow: #0f0 0 0 10px;
+}
+
+li.red {
+  background: #f33;
+  box-shadow: #f00 0 0 0 2px;
+}
+
+li.red:hover {
+  box-shadow: #f00 0 0 20px 2px;
+  text-shadow: #f00 0 0 10px;
+}
+
+li.yellow {
+  background: #ffb;
+  box-shadow: #ff0 0 0 0 2px;
+}
+
+li.yellow:hover {
+  box-shadow: #ff0 0 0 20px 2px;
+  text-shadow: #ff0 0 0 10px;
+}
+
+li.purple {
+  background: #b3a;
+  box-shadow: #c0c 0 0 0 2px;
+}
+
+li.purple:hover {
+  box-shadow: #c0c 0 0 20px 2px;
+  text-shadow: #c0c 0 0 10px;
+}
+
+/* Animations */
+@keyframes green-ls-in {
+  0% {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-90deg) translate(200%, 0);
+  }
+}
+
+@keyframes green-ls-out {
+  0% {
+    transform: translate(-50%, -200%) rotate(-90deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
