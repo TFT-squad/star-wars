@@ -1,12 +1,12 @@
 const container = document.getElementById("containerTest");
 
 const movieImages = [
-  { episode_id: 1, image: "../images/episode1.jpg" },
-  { episode_id: 2, image: "../images/episode2.jpg" },
-  { episode_id: 3, image: "../images/episode3.jpg" },
-  { episode_id: 4, image: "../images/episode4.jpg" },
-  { episode_id: 5, image: "../images/episode5.jpg" },
-  { episode_id: 6, image: "../images/episode6.jpg" },
+  { episode_id: 1, image: "./assets/images/episode1.jpg" },
+  { episode_id: 2, image: "./assets/images/episode2.jpg" },
+  { episode_id: 3, image: "./assets/images/episode3.jpg" },
+  { episode_id: 4, image: "./assets/images/episode4.jpg" },
+  { episode_id: 5, image: "./assets/images/episode5.jpg" },
+  { episode_id: 6, image: "./assets/images/episode6.jpg" },
 ];
 
 fetch("https://swapi.info/api/films")
