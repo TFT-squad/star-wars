@@ -7,14 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- #endregion Meta tags -->
 
-    <!-- #region Favicon -->
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="assets/images/favicon-placeholder.png"
-    />
-    <!-- #endregion Favicon -->
-
     <!-- #region Style sheets -->
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <!-- #endregion Style sheets -->
@@ -23,12 +15,15 @@
     <script src="./assets/js/main.js" type="module"></script>
     <!-- #endregion Main js with modules -->
 
+    <!-- #region Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
+    <!-- #endregion Favicon -->
     <title>TFT Squad template</title>
   </head>
   <body>
     <!-- HEADER -->
-    <header>
-      <nav>
+    <header class="main-header">
+      <nav class="header-nav">
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="./assets/subpages/movies.html">Movies</a></li>
@@ -43,12 +38,21 @@
             </a>
           </li>
         </ul>
+        <div id="container">
+          <div id="burger">
+            <div class="bun top"></div>
+            <div class="filling"></div>
+            <div class="bun bottom"></div>
+          </div>
+        </div>
       </nav>
     </header>
 
     <!-- MAIN CONTENT -->
     <main>
       <h1>Star Wars</h1>
+
+      <canvas></canvas>
 
       <!-- Removed "muted" attribute for audio -->
       <audio muted autoplay loop id="bg-audio">

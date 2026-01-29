@@ -2,6 +2,8 @@
 @import "./reset.css";
 @import "./root.css";
 @import "./layout.css";
+@import "./css-components/burger-menu.css";
+@import "./background.css";
 @import "./css-components/header.css";
 @import "./css-components/footer.css";
 @import "./css-components/modal.css";

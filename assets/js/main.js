@@ -1,5 +1,6 @@
 console.log("main.js loaded successfully.");
 
+import "./background.js";
 import "./audio.js";
 import "./js-components/burger-menu.js";
 // import "./api-fetch.js";
