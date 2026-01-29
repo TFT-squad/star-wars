@@ -130,10 +130,11 @@ class JumpToHyperspace {
       left: "0",
       width: "100%",
       height: "100%",
-      zIndex: "0",
     });
 
-    this.mainEl.appendChild(this.canvas); // CHANGED: main instead of body
+    // CHANGED: Insert as FIRST child instead of appending
+    this.mainEl.insertBefore(this.canvas, this.mainEl.firstChild);
+
     this.bind();
     this.setup();
     this.render();
