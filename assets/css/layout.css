@@ -12,6 +12,7 @@ html {
 
 body {
   min-height: 100vh;
+  background: radial-gradient(circle at top, var(--bg-card), var(--bg-space));
   font-size: 1.6rem; /* Back to default font-size, accomodating for the 62.5% font size in html*/
   line-height: 1.6; /* For better readability */
 }
