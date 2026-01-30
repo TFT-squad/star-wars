@@ -102,7 +102,6 @@ fetch("https://swapi.info/api/starships")
     if (data) {
       console.log(data);
       data.sort((a, b) => a.films.length - b.films.length);
-      const figure = document.createElement("figure");
 
       for (item of data) {
         console.log(item);
@@ -110,6 +109,7 @@ fetch("https://swapi.info/api/starships")
           (x) => x.name === item.name,
         );
 
+        const figure = document.createElement("figure");
         // HEADLINE + IMAGE SECTION
 
         const headline = document.createElement("h3");
