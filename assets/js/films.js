@@ -1,4 +1,4 @@
-const container = document.getElementById("containerTest");
+const container = document.getElementById("films-container");
 
 const movieImages = [
   { episode_id: 1, image: "../images/episode1.jpg" },
@@ -15,7 +15,6 @@ fetch("https://swapi.info/api/films")
     if (data) {
       console.log(movieImages);
       data.sort((a, b) => a.episode_id - b.episode_id);
-      const figure = document.createElement("figure");
 
       for (item of data) {
         console.log(item);
@@ -23,14 +22,14 @@ fetch("https://swapi.info/api/films")
           (x) => x.episode_id === item.episode_id,
         );
 
+        const figure = document.createElement("figure");
         // HEADLINE + IMAGE SECTION
 
         const headline = document.createElement("h3");
         headline.innerText = `${item.title}`;
 
-        const figimage = document.createElement("img");
-        figimage.src = arrMovieImages[0].image;
-
+        const figImg = document.createElement("img");
+        figImg.src = arrMovieImages[0]?.image || "";
         // FIG CAPTION SECTION
 
         const figCap = document.createElement("figcaption");
@@ -48,7 +47,7 @@ fetch("https://swapi.info/api/films")
         // APPENDING
         figUL.append(liRelease, liEpisode, liDirector);
         figCap.append(figUL);
-        figure.append(headline, figimage, figCap);
+        figure.append(headline, figImg, figCap);
         container.append(figure);
       }
     }

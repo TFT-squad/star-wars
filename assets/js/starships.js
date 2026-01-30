@@ -1,4 +1,4 @@
-const container = document.getElementById("container1");
+const container = document.getElementById("starship-container");
 
 const starshipImages = [
   {
@@ -115,8 +115,8 @@ fetch("https://swapi.info/api/starships")
         const headline = document.createElement("h3");
         headline.innerText = `${item.name}`;
 
-        const figimage = document.createElement("img");
-        figimage.src = arrStarshipImages[0].image;
+        const figImg = document.createElement("img");
+        figImg.src = arrStarshipImages[0]?.image || "";
 
         // FIG CAPTION SECTION
 
@@ -154,7 +154,7 @@ fetch("https://swapi.info/api/starships")
           ulFilms,
         );
         figCap.append(figUL);
-        figure.append(headline, figimage, figCap);
+        figure.append(headline, figImg, figCap);
         container.append(figure);
       }
     }
