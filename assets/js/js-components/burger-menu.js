@@ -1,12 +1,13 @@
-/*
 document.addEventListener("DOMContentLoaded", () => {
-  const headers = document.getElementsByClassName("main-header");
-  const headerNavs = document.getElementsByClassName("header-nav");
-  const burgerMenus = document.getElementsByClassName("burger-menu");
+  const header = document.querySelector(".header");
+  const headerNav = document.querySelector(".header-nav");
+  const burgerMenus = document.querySelectorAll(".burger-menu");
 
-  burgerMenus.addEventListener("click", () => {
-    headerNavs.classList.toggle("open");
-    mainHeaders.style.flexDirection = "column";
+  burgerMenus.forEach((burgerMenu) => {
+    burgerMenu.addEventListener("click", (e) => {
+      e.currentTarget.classList.toggle("active");
+      headerNav.classList.toggle("open");
+      header.style.flexDirection = "column";
+    });
   });
 });
-*/

@@ -2,15 +2,15 @@
 @import "./reset.css";
 @import "./root.css";
 @import "./layout.css";
-@import "./css-components/burger-menu.css";
 @import "./background.css";
 @import "./css-components/header.css";
 @import "./css-components/footer.css";
+@import "./css-components/burger-menu.css";
 @import "./css-components/modal.css";
 @import "./css-components/form.css";
-@import "./utils.css";
-@import "./css-components/section.css";
 @import "./css-components/cards.css";
-
+@import "./utils.css";
 
 /* CLASS AND ID STYLING BELOW */
+#rules-of-engagement {
+}
