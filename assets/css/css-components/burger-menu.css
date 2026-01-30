@@ -1,12 +1,9 @@
 .burger-menu {
   cursor: pointer;
-  opacity: 0;
-  -webkit-animation: fadein 0.2s ease 1s forwards;
-  animation: fadein 0.2s ease 1s forwards;
   overflow: hidden;
   position: relative;
-  width: 80px; /* added fixed width */
-  height: 80px; /* added fixed height to match original icon size */
+  width: 6rem;
+  height: 6rem;
   flex-shrink: 0;
   z-index: 500;
 }
@@ -21,8 +18,8 @@
   width: 70%;
   transform-origin: 50% 50%;
   transition:
-    top 0.4s ease 0.4s,
-    transform 0.4s ease 0.4s;
+    top 0.4s ease 0.1s,
+    transform 0.4s ease 0.1s;
 }
 
 .burger-menu .filling:before,
@@ -104,13 +101,4 @@
   transform: translate(-50%, -50%) rotate(-90deg);
   -webkit-animation: green-ls-in 0.8s ease forwards;
   animation: green-ls-in 0.8s ease forwards;
-}
-
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }

@@ -1,0 +1,27 @@
+@media (min-width: 320px) {
+}
+
+/* In burger-menu.js the px value must also be changed */
+@media (min-width: 1200px) {
+  .burger-menu {
+    display: none;
+  }
+
+  body > header > nav {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  body > header > nav > .nav-top-bar {
+    flex-direction: row;
+    justify-content: flex-start;
+    width: fit-content;
+    gap: 2rem;
+  }
+
+  body > header > nav > ul {
+    display: flex;
+    flex-direction: row;
+  }
+}

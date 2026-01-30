@@ -24,7 +24,21 @@
     <!-- HEADER -->
     <header class="header">
       <nav class="header-nav">
-        <ul>
+        <div class="nav-top-bar">
+          <img
+            src="./assets/images/favicon.png"
+            alt="StarWars Wiki Logo"
+            class="header-logo"
+          />
+          <h1>StarWars Wiki</h1>
+          <div class="burger-menu">
+            <div class="bun top"></div>
+            <div class="filling"></div>
+            <div class="bun bottom"></div>
+          </div>
+        </div>
+
+        <ul class="header-ul">
           <li><a href="#">Home</a></li>
           <li><a href="./assets/subpages/films.html">Films</a></li>
           <li><a href="./assets/subpages/people.html">People</a></li>
@@ -38,18 +52,12 @@
             </a>
           </li>
         </ul>
-
-        <div class="burger-menu">
-          <div class="bun top"></div>
-          <div class="filling"></div>
-          <div class="bun bottom"></div>
-        </div>
       </nav>
     </header>
 
     <!-- MAIN CONTENT -->
     <main>
-      <h1>Your Wiki for all things Star Wars!</h1>
+      <h2>Your Wiki for all things Star Wars!</h2>
 
       <!-- Removed "muted" attribute for audio -->
       <audio muted autoplay loop id="bg-audio">
@@ -70,8 +78,8 @@
     <!-- FOOTER -->
     <footer>
       <address>
-        <p>&copy; 2026 TechCollege - All rights reserved.</p>
-        <p>TFT Squad</p>
+        <p>&copy; 2026 TechCollege</p>
+        <p>TFT Squad - All rights reserved.</p>
       </address>
     </footer>
   </body>
