@@ -31,9 +31,8 @@ article {
 
 main {
   position: relative;
-  min-height: 100vh;
-  height: fit-content;
   font-size: 1.8rem; /* Slightly larger font size for main content */
+  min-height: 100vh;
   gap: 1rem;
 }
 
@@ -41,6 +40,7 @@ main {
 main > section {
   gap: 1rem;
   text-align: center;
+  margin-bottom: 5rem;
 }
 
 main > *:not(canvas) {
