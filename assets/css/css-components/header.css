@@ -2,7 +2,13 @@ body > header {
   /* position: fixed;
   top: 0; */
   width: 100%;
-  background-color: var(--bg-color);
+  background: #f5c542;
+  background: radial-gradient(
+    circle,
+    rgba(245, 197, 66, 1) 0%,
+    rgba(219, 168, 29, 1) 50%,
+    rgba(166, 131, 28, 1) 100%
+  );
   color: var(--text-color);
   text-align: center;
   z-index: 11;
@@ -11,6 +17,8 @@ body > header {
 body > header > nav {
   width: 100%;
   display: flex;
+  font-size: 2.6rem;
+  font-weight: 500;
 }
 
 body > header > nav > ul {
@@ -24,18 +32,18 @@ body > header > nav > ul {
 }
 
 body > header > nav > ul > li {
-  /* width: 100%; */
+  width: fit-content;
 }
 
 body > header > nav > ul > li > a {
   padding: 0.25rem 0.5rem;
-  transform: scale(1);
+  transform-origin: 50% 75%;
   transition: 0.3s transform ease-in-out;
   text-decoration: none;
 }
 
 body > header > nav > ul > li > a:hover {
-  transform: scale(1.2);
+  transform: scale(1.15);
 
   text-decoration: underline;
   text-decoration-thickness: 0.2rem;

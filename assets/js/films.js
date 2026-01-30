@@ -28,9 +28,8 @@ fetch("https://swapi.info/api/films")
         const headline = document.createElement("h3");
         headline.innerText = `${item.title}`;
 
-        const figimage = document.createElement("img");
-        figimage.src = arrMovieImages[0].image;
-
+        const figImg = document.createElement("img");
+        figImg.src = arrMovieImages[0]?.image || "";
         // FIG CAPTION SECTION
 
         const figCap = document.createElement("figcaption");
@@ -48,7 +47,7 @@ fetch("https://swapi.info/api/films")
         // APPENDING
         figUL.append(liRelease, liEpisode, liDirector);
         figCap.append(figUL);
-        figure.append(headline, figimage, figCap);
+        figure.append(headline, figImg, figCap);
         container.append(figure);
       }
     }
