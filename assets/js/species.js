@@ -2,50 +2,52 @@ const body = document.body;
 const species = document.getElementById("species-container");
 
 const speciesImages = [
-    { name: "Aleena", image: "../images/Aleena.jpeg" },
-    { name: "Besalisk", image: "../images/Besalisk.jpeg" },
-    { name: "Cerean", image: "../images/Cerean.jpeg" },
-    { name: "Chagrian", image: "../images/Chagrian.jpeg" },
-    { name: "Clawdite", image: "../images/Clawdite.jpeg" },
-    { name: "Droid", image: "../images/Droid.jpeg" },
-    { name: "Dug", image: "../images/Dug.jpeg" },
-    { name: "Ewok", image: "../images/Ewok.jpeg" },
-    { name: "Geonosian", image: "../images/Geonosian.jpeg" },
-    { name: "Gungan", image: "../images/Gungan.jpeg" },
-    { name: "Human", image: "../images/Human.jpeg" },
-    { name: "Hutt", image: "../images/Hutt.jpeg" },
-    { name: "Iktotchi", image: "../images/Iktotchi.jpeg" },
-    { name: "Kaleesh", image: "../images/Kaleesh.jpeg" },
-    { name: "Kaminoan", image: "../images/Kaminoan.jpeg" },
-    { name: "Kel Dor", image: "../images/Kel Dor.jpeg" },
-    { name: "Mirialan", image: "../images/Mirialan.jpeg" },
-    { name: "Mon Calamari", image: "../images/Mon calamari.jpeg" },
-    { name: "Muun", image: "../images/Muun.jpeg" },
-    { name: "Nautolan", image: "../images/Nautolan.jpeg" },
-    { name: "Neimodian", image: "../images/Neimodian.jpeg" },
-    { name: "Pau'an", image: "../images/Pau'an.jpeg" },
-    { name: "Quermian", image: "../images/Quermian.jpeg" },
-    { name: "Rodian", image: "../images/Rodian.jpeg" },
-    { name: "Skakoan", image: "../images/Skakoan.jpeg" },
-    { name: "Sullustan", image: "../images/Sullustan.jpeg" },
-    { name: "Tholothian", image: "../images/Tholothian.jpeg" },
-    { name: "Togruta", image: "../images/Togruta.jpeg" },
-    { name: "Toong", image: "../images/Toong.jpeg" },
-    { name: "Toydarian", image: "../images/Toydarain.jpeg" },
-    { name: "Trandoshan", image: "../images/Trandoshan.jpeg" },
-    { name: "Twi'lek", image: "../images/Twi'lek.jpeg" },
-    { name: "Vulptereen", image: "../images/Vulptereen.jpeg" },
-    { name: "Wookiee", image: "../images/Wookiee.jpeg" },
-    { name: "Xexto", image: "../images/Xexto.jpeg" },
-    { name: "Yoda's species", image: "../images/Yoda-.jpeg" },
-    { name: "Zabrak", image: "../images/Zabrak.jpeg" },
+  { name: "Aleena", image: "../images/Aleena.jpeg" },
+  { name: "Besalisk", image: "../images/Besalisk.jpeg" },
+  { name: "Cerean", image: "../images/Cerean.jpeg" },
+  { name: "Chagrian", image: "../images/Chagrian.jpeg" },
+  { name: "Clawdite", image: "../images/Clawdite.jpeg" },
+  { name: "Droid", image: "../images/Droid.jpeg" },
+  { name: "Dug", image: "../images/Dug.jpeg" },
+  { name: "Ewok", image: "../images/Ewok.jpeg" },
+  { name: "Geonosian", image: "../images/Geonosian.jpeg" },
+  { name: "Gungan", image: "../images/Gungan.jpeg" },
+  { name: "Human", image: "../images/Human.jpeg" },
+  { name: "Hutt", image: "../images/Hutt.jpeg" },
+  { name: "Iktotchi", image: "../images/Iktotchi.jpeg" },
+  { name: "Kaleesh", image: "../images/Kaleesh.jpeg" },
+  { name: "Kaminoan", image: "../images/Kaminoan.jpeg" },
+  { name: "Kel Dor", image: "../images/Kel Dor.jpeg" },
+  { name: "Mirialan", image: "../images/Mirialan.jpeg" },
+  { name: "Mon Calamari", image: "../images/Mon calamari.jpeg" },
+  { name: "Muun", image: "../images/Muun.jpeg" },
+  { name: "Nautolan", image: "../images/Nautolan.jpeg" },
+  { name: "Neimodian", image: "../images/Neimodian.jpeg" },
+  { name: "Pau'an", image: "../images/Pau'an.jpeg" },
+  { name: "Quermian", image: "../images/Quermian.jpeg" },
+  { name: "Rodian", image: "../images/Rodian.jpeg" },
+  { name: "Skakoan", image: "../images/Skakoan.jpeg" },
+  { name: "Sullustan", image: "../images/Sullustan.jpeg" },
+  { name: "Tholothian", image: "../images/Tholothian.jpeg" },
+  { name: "Togruta", image: "../images/Togruta.jpeg" },
+  { name: "Toong", image: "../images/Toong.jpeg" },
+  { name: "Toydarian", image: "../images/Toydarain.jpeg" },
+  { name: "Trandoshan", image: "../images/Trandoshan.jpeg" },
+  { name: "Twi'lek", image: "../images/Twi'lek.jpeg" },
+  { name: "Vulptereen", image: "../images/Vulptereen.jpeg" },
+  { name: "Wookiee", image: "../images/Wookiee.jpeg" },
+  { name: "Xexto", image: "../images/Xexto.jpeg" },
+  { name: "Yoda's species", image: "../images/Yoda.jpeg" },
+  { name: "Zabrak", image: "../images/Zabrak.jpeg" },
 ];
 
 fetch("https://swapi.info/api/species")
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
-    data.sort((a, b) => a.name.localeCompare(b.name)); // SORTERET På ALFABET EFTER DIRECTOR.
+    data.sort((a, b) => a.name.localeCompare(b.name));
+
+    console.log(speciesImages);
 
     for (item of data) {
       const {
@@ -60,7 +62,6 @@ fetch("https://swapi.info/api/species")
       } = item;
 
       const arrSpeciesImages = speciesImages.filter((x) => x.name === name);
-      console.log(speciesImages);
 
       // CONST FIGURE
       const figure = document.createElement("figure");
@@ -69,9 +70,8 @@ fetch("https://swapi.info/api/species")
       const h3 = document.createElement("h3");
       h3.innerHTML = `<h3>${name}</h3>`;
 
-      // IMAGE
       const figImg = document.createElement("img");
-      figImg.src = arrSpeciesImages[0].image;
+      figImg.src = arrSpeciesImages[0]?.image || ""; // ← THIS IS THE ONLY CHANGE
 
       // FIGCAPTION
       const figCap = document.createElement("figcaption");
