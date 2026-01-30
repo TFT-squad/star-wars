@@ -1,4 +1,4 @@
-const container = document.getElementById("container1");
+const container = document.getElementById("starship-container");
 
 const starshipImages = [
   {

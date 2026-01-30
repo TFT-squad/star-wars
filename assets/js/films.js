@@ -15,7 +15,6 @@ fetch("https://swapi.info/api/films")
     if (data) {
       console.log(movieImages);
       data.sort((a, b) => a.episode_id - b.episode_id);
-      const figure = document.createElement("figure");
 
       for (item of data) {
         console.log(item);
@@ -23,6 +22,7 @@ fetch("https://swapi.info/api/films")
           (x) => x.episode_id === item.episode_id,
         );
 
+        const figure = document.createElement("figure");
         // HEADLINE + IMAGE SECTION
 
         const headline = document.createElement("h3");
