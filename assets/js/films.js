@@ -1,4 +1,4 @@
-const container = document.getElementById("containerTest");
+const container = document.getElementById("films-container");
 
 const movieImages = [
   { episode_id: 1, image: "../images/episode1.jpg" },
