@@ -45,7 +45,7 @@ fetch("https://swapi.info/api/species")
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
-    data.sort((a, b) => a.name.localeCompare(b.name)); // SORTERET På ALFABET EFTER DIRECTOR.
+    data.sort((a, b) => a.name.localeCompare(b.name)); // SORTERET På ALFABET EFTER SPECIES.
 
     for (item of data) {
       const {
