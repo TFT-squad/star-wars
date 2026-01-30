@@ -97,3 +97,18 @@ div > img:only-child {
 div > img:only-child:hover {
   transform: scale(1.02);
 }
+
+/* Code */
+pre {
+  background-color: #1e1e1e;
+  border-radius: 6px;
+  padding: 15px;
+  margin: 0 0 10px 0;
+  overflow-x: auto;
+}
+
+code {
+  color: #00ff00;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+}

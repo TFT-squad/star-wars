@@ -4,6 +4,7 @@ section > form {
   width: 100%;
   max-width: 640px;
 }
+
 section > form > fieldset {
   display: flex;
   flex-direction: column;
@@ -14,15 +15,18 @@ section > form > fieldset {
   background: linear-gradient(180deg, var(--bg-card), var(--bg-dark));
   box-shadow: var(--shadow-glow);
 }
+
 section > form > fieldset > legend {
   padding: 0 1rem;
 }
+
 section > form > fieldset > legend > h2 {
   font-size: 4rem;
   letter-spacing: 3px;
   color: var(--gold-jedi);
   margin: 0;
 }
+
 section > form > fieldset > label {
   display: block;
   margin-top: 1.8rem;
@@ -31,6 +35,7 @@ section > form > fieldset > label {
   color: var(--text-muted);
   letter-spacing: 1px;
 }
+
 section > form > fieldset > input,
 section > form > fieldset > textarea {
   width: 100%;
@@ -42,20 +47,24 @@ section > form > fieldset > textarea {
   border-radius: 14px;
   transition: all 0.25s ease;
 }
+
 input:focus,
 textarea:focus {
   outline: none;
   border-color: var(--blue-force);
   box-shadow: 0 0 18px rgba(77, 166, 255, 0.8);
 }
+
 ::placeholder {
   color: var(--text-muted);
   opacity: 0.6;
 }
+
 textarea {
   min-height: 200px;
   resize: none;
 }
+
 #resetbtn,
 #submitbtn {
   margin-top: 2.8rem;
@@ -66,6 +75,7 @@ textarea {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 #resetbtn {
   width: 48%;
   background: transparent;
@@ -73,23 +83,27 @@ textarea {
   border: 2px solid var(--red-sith);
   margin-right: 4%;
 }
+
 #resetbtn:hover {
   background: var(--red-sith);
   color: #000;
   box-shadow: 0 0 22px rgba(230, 57, 70, 0.9);
 }
+
 #submitbtn {
   width: 48%;
   background: transparent;
   color: var(--gold-jedi);
   border: 2px solid var(--gold-jedi);
 }
+
 #submitbtn:hover {
   background: var(--gold-jedi);
   color: #000;
   box-shadow: 0 0 28px rgba(245, 197, 66, 1);
   transform: translateY(-3px);
 }
+
 .buttons {
   display: flex;
   justify-content: space-between;
