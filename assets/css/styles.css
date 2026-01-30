@@ -10,7 +10,4 @@
 @import "./css-components/form.css";
 @import "./css-components/cards.css";
 @import "./utils.css";
-
-/* CLASS AND ID STYLING BELOW */
-#rules-of-engagement {
-}
+@import "./media-queries.css";

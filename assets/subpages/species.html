@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/styles.css" />
-    <script src="../js/background.js" defer></script>
+    <script src="../js/main.js" type="module"></script>
     <script src="../js/species.js" defer></script>
     <!-- #region Favicon -->
     <link rel="icon" type="image/x-icon" href="../images/favicon.png" />
@@ -13,8 +13,22 @@
   </head>
   <body>
     <!-- HEADER -->
-    <header>
-      <nav>
+    <header class="header">
+      <nav class="header-nav">
+        <div class="nav-top-bar">
+          <img
+            src="../images/favicon.png"
+            alt="StarWars Wiki Logo"
+            class="header-logo"
+          />
+          <h1>StarWars Wiki</h1>
+          <div class="burger-menu">
+            <div class="bun top"></div>
+            <div class="filling"></div>
+            <div class="bun bottom"></div>
+          </div>
+        </div>
+
         <ul>
           <li><a href="../../index.html">Home</a></li>
           <li><a href="../subpages/films.html">Films</a></li>
@@ -34,15 +48,15 @@
 
     <!-- MAIN CONTENT -->
     <main>
-      <h1>Species</h1>
-      <section id="species-container" class="sectionCards"></section>
+      <h2>Species</h2>
+      <section id="species-container" class="sectionCard"></section>
     </main>
 
     <!-- FOOTER -->
     <footer>
       <address>
-        <p>&copy; 2026 TechCollege - All rights reserved.</p>
-        <p>TFT Squad</p>
+        <p>&copy; 2026 TechCollege</p>
+        <p>TFT Squad - All rights reserved.</p>
       </address>
     </footer>
   </body>

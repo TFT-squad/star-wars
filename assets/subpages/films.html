@@ -4,16 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/main.js" type="module"></script>
     <script src="../js/films.js" defer></script>
     <!-- #region Favicon -->
     <link rel="icon" type="image/x-icon" href="../images/favicon.png" />
     <!-- #endregion Favicon -->
-    <title>Movies</title>
+    <title>Films</title>
   </head>
   <body>
     <!-- HEADER -->
-    <header>
-      <nav>
+    <header class="header">
+      <nav class="header-nav">
+        <div class="nav-top-bar">
+          <img
+            src="../images/favicon.png"
+            alt="StarWars Wiki Logo"
+            class="header-logo"
+          />
+          <h1>StarWars Wiki</h1>
+          <div class="burger-menu">
+            <div class="bun top"></div>
+            <div class="filling"></div>
+            <div class="bun bottom"></div>
+          </div>
+        </div>
+
         <ul>
           <li><a href="../../index.html">Home</a></li>
           <li><a href="../subpages/films.html">Films</a></li>
@@ -33,7 +48,7 @@
 
     <!-- MAIN CONTENT -->
     <main>
-      <h1>Films</h1>
+      <h2>Films</h2>
 
       <!-- 
     "films": "https://swapi.info/api/films",
@@ -43,14 +58,14 @@
 	"vehicles": "https://swapi.info/api/vehicles",
 	"starships": "https://swapi.info/api/starships" -->
 
-      <section id="films-container" class="sectionCards"></section>
+      <section id="films-container" class="sectionCard"></section>
     </main>
 
     <!-- FOOTER -->
     <footer>
       <address>
-        <p>&copy; 2026 TechCollege - All rights reserved.</p>
-        <p>TFT Squad</p>
+        <p>&copy; 2026 TechCollege</p>
+        <p>TFT Squad - All rights reserved.</p>
       </address>
     </footer>
   </body>

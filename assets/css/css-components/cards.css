@@ -1,7 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;500;700&display=swap");
-
-.sectionCards {
+.sectionCard {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 0.5vw;
@@ -9,6 +6,7 @@
   justify-content: center;
   text-align: center;
   align-items: center;
+  cursor: pointer;
 }
 
 figure {
@@ -31,7 +29,7 @@ figure:hover {
 }
 
 figcaption {
-  font-family: "Orbitron", sans-serif;
+  font-family: var(--font-orbitron);
   padding: 0.5vw;
   display: flex;
   justify-content: left;
@@ -47,7 +45,7 @@ li,
 p {
   text-align: left;
   font-size: 2rem;
-  /* font-family: font-family: "Rajdhani", sans-serif; */
+  /* font-family: var(--font-rajdhani); */
 }
 
 img {
