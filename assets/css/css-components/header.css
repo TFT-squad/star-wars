@@ -57,12 +57,11 @@ body > header > nav > ul > li > a {
   transform-origin: 50% 75%;
   transition: 0.3s transform ease-in-out;
   text-decoration: none;
+  text-decoration-thickness: 0.2rem;
+  text-underline-offset: 0.5rem;
 }
 
 body > header > nav > ul > li > a:hover {
   transform: scale(1.15);
-
   text-decoration: underline;
-  text-decoration-thickness: 0.2rem;
-  text-underline-offset: 0.5rem;
 }
