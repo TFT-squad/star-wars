@@ -80,7 +80,7 @@ class Star {
     const angle = randomInRange(0, 360) * (Math.PI / 180);
     const vX = Math.cos(angle);
     const vY = Math.sin(angle);
-    const mainEl = document.querySelector("main"); // ONLY CHANGE HERE
+    const mainEl = document.querySelector("main");
     const width = mainEl.offsetWidth;
     const height = mainEl.offsetHeight;
     const travelled =
@@ -117,13 +117,14 @@ class JumpToHyperspace {
     initiating: false,
     jumping: false,
     initiateTimestamp: undefined,
+    active: true, // <-- added toggle state
   };
   canvas = document.createElement("canvas");
   context = this.canvas.getContext("2d");
-  mainEl = document.querySelector("main"); // ADDED
+  mainEl = document.querySelector("main");
 
   constructor() {
-    // Style canvas as background - ONLY ADDED
+    // Style canvas as background
     Object.assign(this.canvas.style, {
       position: "absolute",
       top: "0",
@@ -132,7 +133,7 @@ class JumpToHyperspace {
       height: "100%",
     });
 
-    // CHANGED: Insert as FIRST child instead of appending
+    // Insert as FIRST child
     this.mainEl.insertBefore(this.canvas, this.mainEl.firstChild);
 
     this.bind();
@@ -141,39 +142,33 @@ class JumpToHyperspace {
   }
 
   render = () => {
+    if (!this.STATE.active) return; // <-- stop rendering when inactive
+
     const {
       STATE: { bgAlpha, velocity, sizeInc, initiating, jumping, stars },
       context,
       canvas,
     } = this;
 
-    // Use canvas dimensions instead of window
     const w = canvas.width;
     const h = canvas.height;
 
-    // Clear the canvas
-    context.clearRect(0, 0, w, h); // CHANGED
+    context.clearRect(0, 0, w, h);
     if (bgAlpha > 0) {
       context.fillStyle = `rgba(31, 58, 157, ${bgAlpha})`;
-      context.fillRect(0, 0, w, h); // CHANGED
+      context.fillRect(0, 0, w, h);
     }
 
-    // 1. Shall we add a new star
     const nonActive = stars.filter((s) => !s.STATE.active);
     if (!initiating && nonActive.length > 0) {
       nonActive[0].STATE.active = true;
     }
 
-    // 2. Update the stars and draw them.
     for (const star of stars.filter((s) => s.STATE.active)) {
       const { active, x, y, iX, iY, iVX, iVY, size, vX, vY } = star.STATE;
 
-      // Check if the star needs deactivating
       if (
-        ((iX || x) < 0 ||
-          (iX || x) > w || // CHANGED
-          (iY || y) < 0 ||
-          (iY || y) > h) && // CHANGED
+        ((iX || x) < 0 || (iX || x) > w || (iY || y) < 0 || (iY || y) > h) &&
         active &&
         !initiating
       ) {
@@ -183,7 +178,6 @@ class JumpToHyperspace {
         const newIY = initiating ? iY : iY + iVY;
         const newX = x + vX;
         const newY = y + vY;
-        // Just need to work out if it overtakes the original line that's all
         const caught =
           (vX < 0 && newIX < x) ||
           (vX > 0 && newIX > x) ||
@@ -218,6 +212,13 @@ class JumpToHyperspace {
     requestAnimationFrame(this.render.bind(this));
   };
 
+  // <-- added method to toggle animation on/off
+  toggleActive = () => {
+    this.STATE.active = !this.STATE.active;
+    this.canvas.style.display = this.STATE.active ? "block" : "none";
+    if (this.STATE.active) this.render();
+  };
+
   initiate = () => {
     if (this.STATE.jumping || this.STATE.initiating) return;
     this.STATE = {
@@ -229,8 +230,6 @@ class JumpToHyperspace {
       velocity: VELOCITY_INIT_INC,
       bgAlpha: 0.3,
     });
-    // When we initiate, stop the XY origin from moving so that we draw
-    // longer lines until the jump
     for (const star of this.STATE.stars.filter((s) => s.STATE.active)) {
       star.STATE = {
         ...star.STATE,
@@ -282,7 +281,6 @@ class JumpToHyperspace {
   };
 
   bind = () => {
-    // Listen on mainEl so it works through content gaps
     this.mainEl.addEventListener("mousedown", this.initiate.bind(this));
     this.mainEl.addEventListener("touchstart", this.initiate.bind(this));
     this.mainEl.addEventListener("mouseup", this.enter.bind(this));
@@ -291,8 +289,8 @@ class JumpToHyperspace {
 
   setup = () => {
     this.context.lineCap = "round";
-    this.canvas.height = this.mainEl.offsetHeight; // CHANGED
-    this.canvas.width = this.mainEl.offsetWidth; // CHANGED
+    this.canvas.height = this.mainEl.offsetHeight;
+    this.canvas.width = this.mainEl.offsetWidth;
   };
 
   reset = () => {
@@ -311,3 +309,13 @@ window.addEventListener(
     window.myJump.reset();
   }, 250),
 );
+
+// <-- Reference the existing HTML button by id
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById("toggleBg");
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+      window.myJump.toggleActive();
+    });
+  }
+});
