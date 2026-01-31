@@ -4,31 +4,83 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/styles.css" />
-    <title>Document</title>
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/js-components/form.js" defer></script>
+    <!-- #region Favicon -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.png" />
+    <!-- #endregion Favicon -->
+    <title>Contact</title>
   </head>
   <body>
-    <section>
-      <form action="">
-        <fieldset>
-          <legend><h2>Contact</h2></legend>
-          <label for="fname">First Name:</label>
-          <input type="text" id="fname" placeholder="First Name" />
-          <label for="lname">Last Name:</label>
-          <input type="text" id="lname" placeholder="Last Name" />
-          <label for="email">Email:</label>
-          <input type="email" id="email" placeholder="Email@xxxxx.xxx" />
-          <label for="message">Message:</label>
-          <textarea
-            id="message"
-            placeholder="Your message here..."
-            rows="5"
-            cols="10"
-          ></textarea
-          >¨
-          <input type="reset" value="Reset" id="resetbtn" />
-          <input type="submit" value="Submit" id="submitbtn" />
-        </fieldset>
-      </form>
-    </section>
+    <!-- HEADER -->
+    <header class="header">
+      <nav>
+        <div class="nav-top-bar">
+          <img
+            src="../images/favicon.png"
+            alt="StarWars Wiki Logo"
+            class="header-logo"
+          />
+          <a href="../../index.html"><h1>StarWars Wiki</h1></a>
+          <div class="burger-menu">
+            <div class="bun top"></div>
+            <div class="filling"></div>
+            <div class="bun bottom"></div>
+          </div>
+        </div>
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../subpages/films.html">Films</a></li>
+          <li><a href="../subpages/people.html">People</a></li>
+          <li><a href="../subpages/planets.html">Planets</a></li>
+          <li><a href="../subpages/starships.html">Starships</a></li>
+          <li><a href="../subpages/vehicles.html">Vehicles</a></li>
+          <li><a href="../subpages/species.html">Species</a></li>
+          <li>
+            <a href="../subpages/rules-of-engagement.html">
+              Rules of Engagement
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+      <button id="toggleBg">Toggle hyperspace</button>
+
+      <h2>Contact</h2>
+      <section>
+        <form action="">
+          <fieldset>
+            <legend><h2>Contact</h2></legend>
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" placeholder="First Name" />
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" placeholder="Last Name" />
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Email@xxxxx.xxx" />
+            <label for="message">Message:</label>
+            <textarea
+              id="message"
+              placeholder="Your message here..."
+              rows="5"
+              cols="10"
+            ></textarea
+            >¨
+            <input type="reset" value="Reset" id="resetbtn" />
+            <input type="submit" value="Submit" id="submitbtn" />
+          </fieldset>
+        </form>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <address>
+        <p>&copy; 2026 TechCollege</p>
+        <p>TFT Squad - All rights reserved.</p>
+      </address>
+    </footer>
   </body>
 </html>

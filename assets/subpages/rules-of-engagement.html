@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/main.js" type="module"></script>
+    <!-- <script src="../js/rules-of-engagement.js" defer"></script> -->
+    <!-- #region Favicon -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.png" />
+    <!-- #endregion Favicon -->
+    <title>Rules of Engagement</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <nav class="header-nav">
+        <div class="nav-top-bar">
+          <img
+            src="../images/favicon.png"
+            alt="StarWars Wiki Logo"
+            class="header-logo"
+          />
+          <a href="../../index.html"><h1>StarWars Wiki</h1></a>
+          <div class="burger-menu">
+            <div class="bun top"></div>
+            <div class="filling"></div>
+            <div class="bun bottom"></div>
+          </div>
+        </div>
+
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../subpages/films.html">Films</a></li>
+          <li><a href="../subpages/people.html">People</a></li>
+          <li><a href="../subpages/planets.html">Planets</a></li>
+          <li><a href="../subpages/starships.html">Starships</a></li>
+          <li><a href="../subpages/vehicles.html">Vehicles</a></li>
+          <li><a href="../subpages/species.html">Species</a></li>
+          <li>
+            <a href="../subpages/rules-of-engagement.html">
+              Rules of Engagement
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+      <button id="toggleBg">Toggle hyperspace</button>
+
+      <h2>Rules of Engagement</h2>
+      <section>
+        <p>Gå over på develop branch</p>
+        <pre><code>$ git switch develop</code></pre>
+
+        <p>Hent den nyeste version af develop</p>
+        <pre><code>$ git pull</code></pre>
+
+        <p>Lav en ny feature branch ud fra develop</p>
+        <pre><code>$ git switch -c feature/branch-navn</code></pre>
+
+        <p>LAV DIT ARBEJDE</p>
+
+        <p>Stage alt dit arbejde på feature branch</p>
+        <pre><code>$ git add .</code></pre>
+
+        <p>Commit dit arbejde til feature branch</p>
+        <pre><code>$ git commit -m "commit-message"</code></pre>
+
+        <p>Gå tilbage til develop branch</p>
+        <pre><code>$ git switch develop</code></pre>
+
+        <p>Hent den nyeste version af develop igen</p>
+        <pre><code>$ git pull</code></pre>
+
+        <p>Merge dit arbejde ind i develop</p>
+        <pre><code>$ git merge feature/branch-navn</code></pre>
+
+        <p>Slet din lokale branch</p>
+        <pre><code>$ git branch -d feature/branch-navn</code></pre>
+
+        <p>Push develop til GitHub</p>
+        <pre><code>$ git push</code></pre>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <address>
+        <p>&copy; 2026 TechCollege</p>
+        <p>TFT Squad - All rights reserved.</p>
+      </address>
+    </footer>
+  </body>
+</html>

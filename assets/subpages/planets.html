@@ -1,11 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/planets.js" defer></script>
+    <!-- #region Favicon -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.png" />
+    <!-- #endregion Favicon -->
+    <title>Planets</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <nav class="header-nav">
+        <div class="nav-top-bar">
+          <img
+            src="../images/favicon.png"
+            alt="StarWars Wiki Logo"
+            class="header-logo"
+          />
+          <a href="../../index.html"><h1>StarWars Wiki</h1></a>
+          <div class="burger-menu">
+            <div class="bun top"></div>
+            <div class="filling"></div>
+            <div class="bun bottom"></div>
+          </div>
+        </div>
+
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../subpages/films.html">Films</a></li>
+          <li><a href="../subpages/people.html">People</a></li>
+          <li><a href="../subpages/planets.html">Planets</a></li>
+          <li><a href="../subpages/starships.html">Starships</a></li>
+          <li><a href="../subpages/vehicles.html">Vehicles</a></li>
+          <li><a href="../subpages/species.html">Species</a></li>
+          <li>
+            <a href="../subpages/rules-of-engagement.html">
+              Rules of Engagement
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+      <button id="toggleBg">Toggle hyperspace</button>
+
+      <h2>Planets</h2>
+      <section id="planets-container" class="sectionCard"></section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <address>
+        <p>&copy; 2026 TechCollege</p>
+        <p>TFT Squad - All rights reserved.</p>
+      </address>
+    </footer>
+  </body>
 </html>

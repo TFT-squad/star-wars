@@ -7,11 +7,12 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--header-height);
   font-size: 62.5%; /* Trick to set 1rem = 10px */
-  font-family: var(--font-family);
+  font-family: var(--font-orbitron);
 }
 
 body {
   min-height: 100vh;
+  background: radial-gradient(circle at top, var(--bg-card), var(--bg-space));
   font-size: 1.6rem; /* Back to default font-size, accomodating for the 62.5% font size in html*/
   line-height: 1.6; /* For better readability */
 }
@@ -21,7 +22,6 @@ aside,
 main,
 section,
 article {
-  background-color: var(--bg-color);
   color: var(--text-color);
   display: flex;
   flex-direction: column;
@@ -30,8 +30,10 @@ article {
 }
 
 main {
-  height: fit-content;
+  position: relative;
+  padding: 1rem;
   font-size: 1.8rem; /* Slightly larger font size for main content */
+  min-height: 100vh;
   gap: 1rem;
 }
 
@@ -39,6 +41,12 @@ main {
 main > section {
   gap: 1rem;
   text-align: center;
+  margin-bottom: 5rem;
+}
+
+main > *:not(canvas) {
+  position: relative;
+  z-index: 1; /* Above canvas z-index: 0 */
 }
 
 /* Articles inside sections in main */
@@ -46,4 +54,78 @@ main > section > article {
   width: 100%;
   padding: 2rem;
   text-align: left;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1.25;
+  cursor: pointer;
+}
+
+a:has(> h1) {
+  text-decoration: none;
+}
+
+h2 {
+  text-align: center;
+  font-family: var(--font-nav);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--heading-color);
+}
+
+/* Paragraphs */
+
+/* Links */
+a,
+a:visited,
+a:hover,
+a:active {
+  display: inline-block;
+  color: inherit; /* Get color from parent element; color will be the same for all link states */
+}
+
+/* Media */
+img,
+picture,
+svg,
+video,
+canvas {
+  /* display: block;
+  max-width: 100%;
+  height: auto; */
+}
+
+div:has(> img:only-child) {
+  overflow: hidden;
+}
+
+div > img:only-child {
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+div > img:only-child:hover {
+  transform: scale(1.02);
+}
+
+/* Code */
+pre {
+  background-color: #1e1e1e;
+  border-radius: 6px;
+  padding: 15px;
+  margin: 0 0 10px 0;
+  overflow-x: auto;
+}
+
+code {
+  color: #00ff00;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
 }

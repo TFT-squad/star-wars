@@ -1,0 +1,60 @@
+.sectionCard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0.5vw;
+  gap: 2rem;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+figure {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid;
+  width: 100%;
+  height: 100%;
+  box-shadow: 1px 1px 1px 5px;
+  filter: brightness(0.96);
+  background-color: var(--bg-card);
+}
+
+figure:hover {
+  filter: brightness(1.1);
+  scale: 1.01;
+  background-color: rgba(255, 255, 255, 0.11);
+}
+
+figcaption {
+  font-family: var(--font-orbitron);
+  padding: 0.5vw;
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+li,
+p {
+  text-align: left;
+  font-size: 2rem;
+  /* font-family: var(--font-rajdhani); */
+}
+
+img {
+  display: block;
+  width: 15rem;
+  aspect-ratio: 1/1;
+}
+
+img:hover {
+  scale: 1.01;
+  filter: brightness(1.1);
+}

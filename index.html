@@ -7,41 +7,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- #endregion Meta tags -->
 
-    <!-- #region Favicon -->
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="assets/images/favicon-placeholder.png"
-    />
-    <!-- #endregion Favicon -->
-
     <!-- #region Style sheets -->
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <!-- #endregion Style sheets -->
 
     <!-- #region Main js with modules -->
     <script src="./assets/js/main.js" type="module"></script>
+    <script src="./assets/js/audio.js" defer></script>
     <!-- #endregion Main js with modules -->
 
-    <title>TFT Squad template</title>
+    <!-- #region Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
+    <!-- #endregion Favicon -->
+    <title>StarWars Wikipedia</title>
   </head>
   <body>
     <!-- HEADER -->
-    <header>
-      <nav>
-        <ul>
-          <li><a href="#">Nav item 1</a></li>
-          <li><a href="#">Nav item 2</a></li>
-          <li><a href="#">Nav item 3</a></li>
-          <li><a href="#">Nav item 4</a></li>
-          <li><a href="#">Nav item 5</a></li>
+    <header class="header">
+      <nav class="header-nav">
+        <div class="nav-top-bar">
+          <img
+            src="./assets/images/favicon.png"
+            alt="StarWars Wiki Logo"
+            class="header-logo"
+          />
+          <a href="#"><h1>StarWars Wiki</h1></a>
+          <div class="burger-menu">
+            <div class="bun top"></div>
+            <div class="filling"></div>
+            <div class="bun bottom"></div>
+          </div>
+        </div>
+
+        <ul class="header-ul">
+          <li><a href="#">Home</a></li>
+          <li><a href="./assets/subpages/films.html">Films</a></li>
+          <li><a href="./assets/subpages/people.html">People</a></li>
+          <li><a href="./assets/subpages/planets.html">Planets</a></li>
+          <li><a href="./assets/subpages/starships.html">Starships</a></li>
+          <li><a href="./assets/subpages/vehicles.html">Vehicles</a></li>
+          <li><a href="./assets/subpages/species.html">Species</a></li>
+          <li>
+            <a href="./assets/subpages/rules-of-engagement.html">
+              Rules of Engagement
+            </a>
+          </li>
         </ul>
       </nav>
     </header>
 
     <!-- MAIN CONTENT -->
     <main>
-      <h1>H1</h1>
+      <button id="toggleBg">Toggle hyperspace</button>
+
+      <h2>Your Wiki for all things Star Wars!</h2>
+
+      <!-- Removed "muted" attribute for audio -->
+      <audio muted autoplay loop id="bg-audio">
+        <source src="./assets/audio/star-wars-credits.mp3" type="audio/mpeg" />
+      </audio>
+
+      <label for="volume-slider">Volume:</label>
+      <input type="range" id="volume-slider" min="0" max="50" value="5" />
 
       <section>
         <h2>Section 1</h2>
@@ -49,33 +76,13 @@
         <article>Article 2</article>
         <article>Article 3</article>
       </section>
-
-      <section>
-        <h2>Section 2</h2>
-        <article>Article 1</article>
-        <article>Article 2</article>
-        <article>Article 3</article>
-      </section>
-
-      <!-- Some blank scrollable space, delete whenever -->
-      <p>Blank scrollable space below, delete whenever</p>
-      <div
-        style="
-          display: inline;
-          height: 1000px;
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        "
-      ></div>
     </main>
 
     <!-- FOOTER -->
     <footer>
       <address>
-        <p>&copy; 2026 TechCollege - All rights reserved.</p>
-        <p>TFT Squad</p>
+        <p>&copy; 2026 TechCollege</p>
+        <p>TFT Squad - All rights reserved.</p>
       </address>
     </footer>
   </body>
