@@ -2,6 +2,10 @@
   text-decoration: underline;
 }
 
+.spin {
+  transform: rotate(360deg);
+}
+
 .capitalize {
   text-transform: capitalize;
 }

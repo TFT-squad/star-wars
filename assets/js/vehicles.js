@@ -1,6 +1,6 @@
 const container = document.getElementById("vehicles-container");
 
-const vehiclesImages = [
+const vehicleImages = [
   {
     name: "Sand Crawler",
     image: "../images/vehicles/sand-crawler.jpeg",
@@ -165,6 +165,63 @@ fetch("https://swapi.info/api/vehicles")
     if (data) {
       for (item of data) {
         console.log(item);
+        const arrVehicleImages = vehicleImages.filter(
+          (x) => x.name === item.name,
+        );
+
+        const figure = document.createElement("figure");
+        const headline = document.createElement("h3");
+        const figImg = document.createElement("img");
+        const figCap = document.createElement("figcaption");
+        const figUL = document.createElement("ul");
+
+        const liModel = document.createElement("li");
+        const liManufacturer = document.createElement("li");
+        const liVehicleClass = document.createElement("li");
+        const liCrewCap = document.createElement("li");
+        const liPassengers = document.createElement("li");
+
+        const ulFilms = document.createElement("ul");
+        const liFilms = document.createElement("li");
+
+        headline.innerText = `${item.name}`;
+        figImg.src = arrVehicleImages[0]?.image || "";
+
+        /*
+        model, producent, fartøjsklasse, antal besætning, kapacitet og liste af de film som fartøjet er med i
+        Listen skal sorteres stigende efter antallet af film
+        */
+
+        /* Vehicle model */
+        liModel.innerHTML = `<p><b>Model:</b> ${item.model}</p>`;
+
+        /* Vehicle manufacturer */
+        liManufacturer.innerHTML = `<p><b>Manufacturer:</b> ${item.manufacturer}</p>`;
+
+        /* Vehicle class */
+        liVehicleClass.innerHTML = `<p><b>Vehicle class:</b> ${item.vehicle_class}</p>`;
+
+        /* Vehicle crew capacity */
+        liCrewCap.innerHTML = `<p><b>Crew Capacity:</b> ${item.crew}</p>`;
+
+        /* Vehicle passenger capacity */
+        liPassengers.innerHTML = `<p><b>Passengers Capacity:</b> ${item.passengers}</p>`;
+
+        /* Films where vehicle appears */
+        liFilms.innerHTML = `<p><b>Film:</b><ul><li>${item.films.join("</li><li></p>")}</li></ul>`;
+
+        ulFilms.append(liFilms);
+        figUL.append(
+          liModel,
+          liManufacturer,
+          liVehicleClass,
+          liCrewCap,
+          liPassengers,
+        );
+
+        figCap.append(figUL);
+        figure.append(headline, figImg, figCap);
+        container.append(figure);
       }
     }
   });
