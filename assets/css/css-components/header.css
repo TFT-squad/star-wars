@@ -42,7 +42,7 @@ body > header > nav > ul {
   padding: 1rem 0rem;
   /* justify-content: space-evenly; */
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   list-style-type: none;
   line-height: 2.5rem;
 }

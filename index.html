@@ -13,6 +13,7 @@
 
     <!-- #region Main js with modules -->
     <script src="./assets/js/main.js" type="module"></script>
+    <script src="./assets/js/audio.js" defer></script>
     <!-- #endregion Main js with modules -->
 
     <!-- #region Favicon -->
@@ -30,7 +31,7 @@
             alt="StarWars Wiki Logo"
             class="header-logo"
           />
-          <h1>StarWars Wiki</h1>
+          <a href="#"><h1>StarWars Wiki</h1></a>
           <div class="burger-menu">
             <div class="bun top"></div>
             <div class="filling"></div>
@@ -57,6 +58,8 @@
 
     <!-- MAIN CONTENT -->
     <main>
+      <button id="toggleBg">Toggle hyperspace</button>
+
       <h2>Your Wiki for all things Star Wars!</h2>
 
       <!-- Removed "muted" attribute for audio -->
