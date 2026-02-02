@@ -161,10 +161,12 @@ const vehicleImages = [
 
 fetch("https://swapi.info/api/vehicles")
   .then((response) => response.json())
-  .then((data) => {
+  .then(async (data) => {
     if (data) {
-      for (item of data) {
-        console.log(item);
+      data.sort((a, b) => a.films.length - b.films.length);
+
+      for (const item of data) {
+        // console.log(item);
         const arrVehicleImages = vehicleImages.filter(
           (x) => x.name === item.name,
         );
@@ -180,17 +182,11 @@ fetch("https://swapi.info/api/vehicles")
         const liVehicleClass = document.createElement("li");
         const liCrewCap = document.createElement("li");
         const liPassengers = document.createElement("li");
-
-        const ulFilms = document.createElement("ul");
         const liFilms = document.createElement("li");
+        const ulFilms = document.createElement("ul");
 
         headline.innerText = `${item.name}`;
         figImg.src = arrVehicleImages[0]?.image || "";
-
-        /*
-        model, producent, fartøjsklasse, antal besætning, kapacitet og liste af de film som fartøjet er med i
-        Listen skal sorteres stigende efter antallet af film
-        */
 
         /* Vehicle model */
         liModel.innerHTML = `<p><b>Model:</b> ${item.model}</p>`;
@@ -199,7 +195,10 @@ fetch("https://swapi.info/api/vehicles")
         liManufacturer.innerHTML = `<p><b>Manufacturer:</b> ${item.manufacturer}</p>`;
 
         /* Vehicle class */
-        liVehicleClass.innerHTML = `<p><b>Vehicle class:</b> ${item.vehicle_class}</p>`;
+        const vehicleClass =
+          item.vehicle_class.charAt(0).toUpperCase() +
+          item.vehicle_class.slice(1);
+        liVehicleClass.innerHTML = `<p><b>Vehicle class:</b> ${vehicleClass}</p>`;
 
         /* Vehicle crew capacity */
         liCrewCap.innerHTML = `<p><b>Crew Capacity:</b> ${item.crew}</p>`;
@@ -207,16 +206,25 @@ fetch("https://swapi.info/api/vehicles")
         /* Vehicle passenger capacity */
         liPassengers.innerHTML = `<p><b>Passengers Capacity:</b> ${item.passengers}</p>`;
 
-        /* Films where vehicle appears */
-        liFilms.innerHTML = `<p><b>Film:</b><ul><li>${item.films.join("</li><li></p>")}</li></ul>`;
+        const filmPromises = item.films.map((url) =>
+          fetch(url).then((res) => res.json()),
+        );
+        const films = await Promise.all(filmPromises);
+        const filmItems = films
+          .map((f) => `<li>${f.title} (Ep. ${f.episode_id})</li>`)
+          .join("");
 
-        ulFilms.append(liFilms);
+        liFilms.innerHTML = `<p><b>Film appearances:</b> ${films.length}</p>`;
+        ulFilms.innerHTML = filmItems;
+
         figUL.append(
           liModel,
           liManufacturer,
           liVehicleClass,
           liCrewCap,
           liPassengers,
+          liFilms,
+          ulFilms,
         );
 
         figCap.append(figUL);

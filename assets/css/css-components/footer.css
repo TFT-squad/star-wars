@@ -24,5 +24,30 @@ footer > address {
   gap: 0.5rem;
   font-style: normal;
   line-height: 1.2;
+  letter-spacing: 0.15em;
   transform: scaleY(1.4);
+}
+
+footer > address a {
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+}
+
+footer > address p {
+  transition: 0.2s ease-in-out;
+}
+
+footer > address a:hover {
+  color: var(--blue-force);
+  text-shadow: 0 0 8px rgba(77, 166, 255, 0.8);
+  letter-spacing: 0.275em;
+  text-decoration: underline;
+  text-decoration-thickness: 0.15rem;
+  text-underline-offset: 0.2rem;
+}
+
+footer > address p:hover {
+  color: var(--red-sith);
+  text-shadow: 0 0 8px rgba(255, 77, 77, 0.8);
+  cursor: default;
 }

@@ -100,11 +100,11 @@ fetch("https://swapi.info/api/starships")
   .then((response) => response.json())
   .then((data) => {
     if (data) {
-      console.log(data);
+      // console.log(data);
       data.sort((a, b) => a.films.length - b.films.length);
 
       for (item of data) {
-        console.log(item);
+        // console.log(item);
         const arrStarshipImages = starshipImages.filter(
           (x) => x.name === item.name,
         );

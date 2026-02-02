@@ -1,23 +1,23 @@
 const container = document.getElementById("films-container");
 
 const movieImages = [
-  { episode_id: 1, image: "../images/episode1.jpg" },
-  { episode_id: 2, image: "../images/episode2.jpg" },
-  { episode_id: 3, image: "../images/episode3.jpg" },
-  { episode_id: 4, image: "../images/episode4.jpg" },
-  { episode_id: 5, image: "../images/episode5.jpg" },
-  { episode_id: 6, image: "../images/episode6.jpg" },
+  { episode_id: 1, image: "../images/films/episode1.jpg" },
+  { episode_id: 2, image: "../images/films/episode2.jpg" },
+  { episode_id: 3, image: "../images/films/episode3.jpg" },
+  { episode_id: 4, image: "../images/films/episode4.jpg" },
+  { episode_id: 5, image: "../images/films/episode5.jpg" },
+  { episode_id: 6, image: "../images/films/episode6.jpg" },
 ];
 
 fetch("https://swapi.info/api/films")
   .then((response) => response.json())
   .then((data) => {
     if (data) {
-      console.log(movieImages);
+      // console.log(movieImages);
       data.sort((a, b) => a.episode_id - b.episode_id);
 
       for (item of data) {
-        console.log(item);
+        // console.log(item);
         const arrMovieImages = movieImages.filter(
           (x) => x.episode_id === item.episode_id,
         );

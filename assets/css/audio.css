@@ -6,6 +6,8 @@ audio#bg-audio {
   top: 5rem;
   right: 1rem;
   background: url(../images/light-saber-hilt.jpeg) no-repeat center/cover;
+  background-size: 130% auto;
+  background-position-x: 25%;
   border-radius: 999rem;
   z-index: 12;
   padding-left: 4.5rem;
@@ -26,12 +28,14 @@ input#volume-slider {
 /* Track (Firefox) */
 input#volume-slider::-moz-range-track {
   background-color: transparent;
+  border: 2px solid var(--blue-force);
   border-radius: 999rem;
 }
 
 /* Track (Chrome, Safari, Edge) */
 input#volume-slider::-webkit-slider-runnable-track {
   background-color: transparent;
+  border: 2px solid var(--blue-force);
   border-radius: 999rem;
 }
 
@@ -41,10 +45,10 @@ input#volume-slider::-webkit-slider-thumb {
   appearance: none;
   width: 14px;
   height: 14px;
-  background-color: var(--blue-force); /* knob color */
+  background-color: #4da6ffdd; /* knob color */
+  box-shadow: 0 0 5px 1px #4da6ffaa;
   border-radius: 999rem;
   cursor: pointer;
-  border: none;
 }
 
 /* Knob (Firefox) */

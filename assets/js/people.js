@@ -30,7 +30,7 @@ const peopleImages = [
   { name: "R5-D4", image: "../images/people/R5-D4.jpeg" },
   { name: "Wedge Antilles", image: "../images/people/Wedge Antilles.jpeg" },
   { name: "Wilhuff Tarkin", image: "../images/people/Wilhuff Tarkin.jpeg" },
-  { name: "Yoda", image: "../images/Yoda.jpeg" },
+  { name: "Yoda", image: "../images/people/Yoda.jpeg" },
 ];
 
 fetch("https://swapi.info/api/people")
@@ -38,13 +38,13 @@ fetch("https://swapi.info/api/people")
   .then((data) => {
     const sliceData = data.slice(0, 20);
     sliceData.sort((a, b) => a.name.localeCompare(b.name)); // SORTERET På ALFABET EFTER NAME.
-    console.log(sliceData);
+    // console.log(sliceData);
 
     for (item of sliceData) {
       const { name, gender, films } = item;
 
       const arrPeopleImages = peopleImages.filter((x) => x.name === name);
-      console.log(peopleImages);
+      // console.log(peopleImages);
 
       // CONST FIGURE
       const figure = document.createElement("figure");

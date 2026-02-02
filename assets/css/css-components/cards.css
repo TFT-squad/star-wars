@@ -1,12 +1,20 @@
 .sectionCard {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   padding: 0.5vw;
-  gap: 2rem;
+  gap: 2.5rem;
   justify-content: center;
   text-align: center;
   align-items: center;
   cursor: pointer;
+}
+
+.sectionCard#films-container {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.sectionCard#planets-container {
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .sectionCard figure {
@@ -14,18 +22,39 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  border: 1px solid;
+  border: 5px solid var(--border-glow);
   width: 100%;
   height: 100%;
-  box-shadow: 1px 1px 1px 5px;
+  box-shadow: 0px 0px 10px 5px var(--border-glow);
   filter: brightness(0.96);
-  background-color: var(--bg-card);
+  background-color: rgba(255, 255, 255, 0.11);
+  border-radius: 1rem 1rem 0 0;
+  transition: 0.175s ease-in-out;
+  overflow: hidden;
 }
 
 .sectionCard figure:hover {
-  filter: brightness(1.1);
-  scale: 1.01;
-  background-color: rgba(255, 255, 255, 0.11);
+  filter: brightness(1.025);
+  transform: scale(1.01);
+  background-color: var(--bg-card);
+}
+
+.sectionCard figure h3 {
+  padding: 0.5rem 0;
+  font-size: 2.5rem;
+  letter-spacing: 0.02em;
+}
+
+.sectionCard img {
+  /* padding: 2rem 0; */
+  width: 100%;
+  aspect-ratio: 16/19;
+  object-fit: cover;
+}
+
+.sectionCard img:hover {
+  filter: brightness(1.025);
+  transform: rotate(360deg);
 }
 
 .sectionCard figcaption {
@@ -46,15 +75,4 @@
   text-align: left;
   font-size: 2rem;
   /* font-family: var(--font-rajdhani); */
-}
-
-.sectionCard img {
-  display: block;
-  width: 15rem;
-  aspect-ratio: 1/1;
-}
-
-.sectionCard img:hover {
-  scale: 1.01;
-  filter: brightness(1.1);
 }
