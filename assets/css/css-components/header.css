@@ -3,7 +3,8 @@ body > header {
   top: 0; */
   width: 100%;
   padding: 0.5rem 1rem;
-  background: #f5c542;
+
+  background: var(--header-bg);
   background: radial-gradient(
     circle,
     rgba(245, 197, 66, 1) 0%,

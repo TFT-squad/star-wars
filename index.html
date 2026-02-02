@@ -14,6 +14,7 @@
     <!-- #region Main js with modules -->
     <script src="./assets/js/main.js" type="module"></script>
     <script src="./assets/js/audio.js" defer></script>
+    <script src="./assets/js/hero-intro.js" defer></script>
     <!-- #endregion Main js with modules -->
 
     <!-- #region Favicon -->
@@ -60,21 +61,53 @@
     <main>
       <button id="toggleBg">Toggle hyperspace</button>
 
-      <h2>Your Wiki for all things Star Wars!</h2>
+      <h1>Your Wiki for all things Star Wars!</h1>
 
       <!-- Removed "muted" attribute for audio -->
       <audio muted autoplay loop id="bg-audio">
         <source src="./assets/audio/star-wars-credits.mp3" type="audio/mpeg" />
       </audio>
 
-      <label for="volume-slider">Volume:</label>
-      <input type="range" id="volume-slider" min="0" max="50" value="5" />
+      <div id="audio-controls">
+        <input type="range" id="volume-slider" min="0" max="50" value="5" />
+      </div>
 
       <section>
-        <h2>Section 1</h2>
-        <article>Article 1</article>
-        <article>Article 2</article>
-        <article>Article 3</article>
+        <!-- Star Wars intro -->
+        <section class="star-wars-intro">
+          <div id="container">
+            <div class="pre-content">
+              <h3>For længe siden, i en lobby langt, langt borte…</h3>
+            </div>
+            <div class="image">
+              <img
+                src="https://cdn.worldvectorlogo.com/logos/star-wars-4.svg"
+                alt="Star Wars logo"
+              />
+            </div>
+            <div class="content">
+              <div class="amazing-credits">
+                <h2 class="crawl-text">Episode 69</h2>
+                <h2 class="crawl-text">ET NYT SQUAD</h2>
+                <p class="crawl-text">
+                  Kaos hersker i ranked universet. Mørke spillere spreder
+                  toxicitet og RNG truer balancen i galaksen. Men håbet er ikke
+                  tabt.
+                </p>
+                <p class="crawl-text">
+                  Fire helte kendt som TFT-squad rejser sig mod uhyggen. Med
+                  kløgt, strategi og en smule held kæmper de for at redde
+                  verden... ét reroll ad gangen.
+                </p>
+                <p class="crawl-text">
+                  Deres mission: at bringe stabilitet til boardet og vise, at
+                  venskab og memes er den sande vej til Top 4 og Masters.
+                </p>
+                <p class="crawl-text">Dette er begyndelsen på deres eventyr…</p>
+              </div>
+            </div>
+          </div>
+        </section>
       </section>
     </main>
 
