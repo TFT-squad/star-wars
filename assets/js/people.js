@@ -24,7 +24,7 @@ const peopleImages = [
   { name: "Leia Organa", image: "../images/people/Leia Organa.jpeg" },
   { name: "Luke Skywalker", image: "../images/people/Luke Skywalker.jpeg" },
   { name: "Obi-Wan Kenobi", image: "../images/people/Obi-Wan Kenobi.jpeg" },
-  { name: "Owen Lars", image: "../images/people/Owen Lars.jpeg" },
+  { name: "Owen Lars", image: "../images/people/Owen-Lars.jpeg" },
   { name: "Palpatine", image: "../images/people/Palpatine.jpeg" },
   { name: "R2-D2", image: "../images/people/R2-D2.jpeg" },
   { name: "R5-D4", image: "../images/people/R5-D4.jpeg" },
