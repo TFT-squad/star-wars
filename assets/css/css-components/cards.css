@@ -9,7 +9,7 @@
   cursor: pointer;
 }
 
-figure {
+.sectionCard figure {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -22,13 +22,13 @@ figure {
   background-color: var(--bg-card);
 }
 
-figure:hover {
+.sectionCard figure:hover {
   filter: brightness(1.1);
   scale: 1.01;
   background-color: rgba(255, 255, 255, 0.11);
 }
 
-figcaption {
+.sectionCard figcaption {
   font-family: var(--font-orbitron);
   padding: 0.5vw;
   display: flex;
@@ -37,24 +37,24 @@ figcaption {
   height: 100%;
 }
 
-ul {
+.sectionCard ul {
   list-style: none;
 }
 
-li,
-p {
+.sectionCard li,
+.sectionCard p {
   text-align: left;
   font-size: 2rem;
   /* font-family: var(--font-rajdhani); */
 }
 
-img {
+.sectionCard img {
   display: block;
   width: 15rem;
   aspect-ratio: 1/1;
 }
 
-img:hover {
+.sectionCard img:hover {
   scale: 1.01;
   filter: brightness(1.1);
 }

@@ -21,7 +21,7 @@ button:active {
   transform: translateY(0.1rem);
 }
 
-#toggleBg {
+button#toggleBg {
   position: absolute;
   right: 1rem;
   background: url(../../images/hyperspace.jpeg) no-repeat center/cover;

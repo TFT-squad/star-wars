@@ -3,6 +3,8 @@
 @import "./root.css";
 @import "./layout.css";
 @import "./background.css";
+@import "./audio.css";
+@import "./hero-intro.css";
 @import "./css-components/header.css";
 @import "./css-components/footer.css";
 @import "./css-components/burger-menu.css";
