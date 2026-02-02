@@ -97,6 +97,10 @@
   animation-fill-mode: forwards;
 }
 
+.star-wars-intro .long-ago {
+  text-align: center;
+}
+
 .star-wars-intro .crawl-text {
   font-family: var(--font-league-gothic);
   color: rgb(255, 197, 0);
