@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Remove background so the rest of the page shows through
             container.style.background = "none";
             container.style.backgroundColor = "transparent";
-          }, 87000); // 87 seconds
+          }, 60000); // 60 seconds
         }, 6000);
       }, 2000);
     }, 2000);

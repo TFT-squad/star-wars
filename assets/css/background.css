@@ -3,3 +3,9 @@ main canvas {
   height: 100%;
   width: 100%;
 }
+
+main canvas {
+  cursor:
+    url("../../assets/images/hyperspace-cursor.png") 10 15,
+    auto;
+}

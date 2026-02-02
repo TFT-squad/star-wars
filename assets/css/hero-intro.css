@@ -2,21 +2,34 @@
   position: relative;
   height: 100vh;
   overflow: hidden;
+  cursor:
+    url("../../assets/images/hyperspace-cursor.png") 10 15,
+    auto;
 }
 
 .star-wars-intro section {
   height: 100%;
+  cursor:
+    url("../../assets/images/hyperspace-cursor.png") 10 15,
+    auto;
 }
 
 .star-wars-intro #container {
   height: 100%;
   width: 100%;
   text-align: center;
+  overflow: hidden;
+  cursor:
+    url("../../assets/images/hyperspace-cursor.png") 10 15,
+    auto;
 }
 
 .star-wars-intro #container .pre-content,
 .star-wars-intro #container .image {
   display: none;
+  cursor:
+    url("../../assets/images/hyperspace-cursor.png") 10 15,
+    auto;
 }
 
 .star-wars-intro #container {
@@ -24,6 +37,9 @@
   height: 100%;
   -webkit-perspective: 150px;
   perspective: 150px;
+  cursor:
+    url("../../assets/images/hyperspace-cursor.png") 10 15,
+    auto;
 }
 
 .star-wars-intro #container .pre-content {
@@ -36,12 +52,22 @@
   margin: 0 auto;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
+  cursor:
+    url("../../assets/images/hyperspace-cursor.png") 10 15,
+    auto;
 }
 
 .star-wars-intro #container .image {
   position: absolute;
   height: 100%;
   width: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor:
+    url("../../assets/images/hyperspace-cursor.png") 10 15,
+    auto;
 }
 
 .star-wars-intro #container .image img {
@@ -53,7 +79,13 @@
   margin: auto;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor:
+    url("../../assets/images/hyperspace-cursor.png") 10 15,
+    auto;
 }
 
 .star-wars-intro #container .content {
@@ -64,27 +96,39 @@
   margin: 0 auto;
   font-size: 5em;
   font-weight: 600;
+  cursor:
+    url("../../assets/images/hyperspace-cursor.png") 10 15,
+    auto;
 }
 
 .star-wars-intro #container .content h1 {
   margin-bottom: 30px;
+  cursor:
+    url("../../assets/images/hyperspace-cursor.png") 10 15,
+    auto;
 }
 
 .star-wars-intro #container .content p {
   text-align: justify;
   margin-bottom: 40px;
+  cursor:
+    url("../../assets/images/hyperspace-cursor.png") 10 15,
+    auto;
 }
 
 .star-wars-intro #container .content .amazing-credits {
   position: relative;
+  cursor:
+    url("../../assets/images/hyperspace-cursor.png") 10 15,
+    auto;
 }
 
 .star-wars-intro .animate {
   -webkit-animation-name: appear;
-  -webkit-animation-duration: 87s;
+  -webkit-animation-duration: 60s;
   -webkit-animation-fill-mode: forwards;
   animation-name: appear;
-  animation-duration: 87s;
+  animation-duration: 60s;
   animation-fill-mode: forwards;
 }
 
@@ -99,6 +143,14 @@
 
 .star-wars-intro .long-ago {
   text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: default;
+  cursor:
+    url("../../assets/images/hyperspace-cursor.png") 10 15,
+    auto;
 }
 
 .star-wars-intro .crawl-text {
@@ -113,14 +165,23 @@
   -moz-user-select: none;
   -ms-user-select: none;
   cursor: default;
+  cursor:
+    url("../../assets/images/hyperspace-cursor.png") 10 15,
+    auto;
 }
 
 @keyframes appear {
   0% {
     top: 80%;
-  }
-  95% {
     opacity: 1;
+  }
+  80% {
+    /* fade out earlier */
+    opacity: 1;
+  }
+  90% {
+    /* start fading earlier */
+    opacity: 0;
   }
   100% {
     top: -200%;

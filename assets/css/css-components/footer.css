@@ -23,4 +23,6 @@ footer > address {
   align-items: center;
   gap: 0.5rem;
   font-style: normal;
+  line-height: 1.2;
+  transform: scaleY(1.4);
 }

@@ -18,6 +18,9 @@ input#volume-slider {
   background-color: transparent; /* track background color */
   border-radius: 999rem;
   outline: none;
+  outline: none;
+  border-color: var(--blue-force);
+  box-shadow: 0 0 18px rgba(77, 166, 255, 0.8);
 }
 
 /* Track (Firefox) */

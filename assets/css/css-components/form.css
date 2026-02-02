@@ -48,8 +48,8 @@ section > form > fieldset > textarea {
   transition: all 0.25s ease;
 }
 
-input:focus,
-textarea:focus {
+form input:focus,
+form textarea:focus {
   outline: none;
   border-color: var(--blue-force);
   box-shadow: 0 0 18px rgba(77, 166, 255, 0.8);
